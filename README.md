@@ -1,3 +1,38 @@
+# WM 2026 Tippspiel (Deutschland-Spiele)
+
+Internes Tippspiel für die Fussball-WM 2026. Mehrere Personen können sich mit ihrem Namen
+anmelden, Tipps für die Deutschland-Spiele abgeben und sich nach Abschluss der WM in der
+Tabelle vergleichen.
+
+## Funktionen
+
+- Jede Person meldet sich nur mit ihrem Namen an (kein Passwort nötig).
+- Tipps werden zentral auf dem Server gespeichert (`server/data/store.json`), damit alle
+  Teilnehmer den gleichen Stand sehen.
+- Ein Admin-Bereich (geschützt durch `ADMIN_PASSWORD`) erlaubt das Anlegen der
+  Deutschland-Spiele und das Eintragen der Endergebnisse.
+- Punktevergabe: 5 Punkte für das exakte Ergebnis, 2 Punkte für die richtige Tendenz
+  (Sieg/Niederlage/Unentschieden), 0 Punkte sonst.
+- Sobald ein Ergebnis eingetragen ist, kann der Tipp für dieses Spiel nicht mehr geändert werden.
+
+## Starten
+
+`ADMIN_PASSWORD` muss gesetzt sein, sonst startet der Server nicht (es gibt keinen
+Standardwert).
+
+```bash
+npm install
+ADMIN_PASSWORD=meinpasswort npm run dev   # startet Backend (Port 4000) und Frontend (Port 3000) gleichzeitig
+```
+
+Nur das Backend starten:
+
+```bash
+ADMIN_PASSWORD=meinpasswort npm run server
+```
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
