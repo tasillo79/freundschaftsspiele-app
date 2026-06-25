@@ -17,12 +17,15 @@ Tabelle vergleichen.
 
 ## Starten
 
+`ADMIN_PASSWORD` muss gesetzt sein, sonst startet der Server nicht (es gibt keinen
+Standardwert).
+
 ```bash
 npm install
-npm run dev   # startet Backend (Port 4000) und Frontend (Port 3000) gleichzeitig
+ADMIN_PASSWORD=meinpasswort npm run dev   # startet Backend (Port 4000) und Frontend (Port 3000) gleichzeitig
 ```
 
-Admin-Passwort per Umgebungsvariable setzen (Standard: `admin`):
+Nur das Backend starten:
 
 ```bash
 ADMIN_PASSWORD=meinpasswort npm run server

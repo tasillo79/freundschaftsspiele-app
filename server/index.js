@@ -4,8 +4,13 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 4000;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const DATA_FILE = path.join(__dirname, 'data', 'store.json');
+
+if (!ADMIN_PASSWORD) {
+  console.error('ADMIN_PASSWORD ist nicht gesetzt. Bitte als Umgebungsvariable definieren, bevor der Server gestartet wird.');
+  process.exit(1);
+}
 
 function loadData() {
   if (!fs.existsSync(DATA_FILE)) {
